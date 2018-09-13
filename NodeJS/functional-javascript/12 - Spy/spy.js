@@ -1,14 +1,14 @@
 function Spy(target, method) {
-    var reuslt = {count: 0};
+    var result = {count: 0};
 
-    var fn = target[method];
+    var originalFunctional = target[method];
 
     target[method] = function() {
-        reuslt.count += 1;
-        return fn.apply(this, arguments);
+        result.count += 1;
+        return originalFunctional.apply(this, arguments);
     }
 
-    return reuslt;
+    return result;
 }
 
 module.exports = Spy
