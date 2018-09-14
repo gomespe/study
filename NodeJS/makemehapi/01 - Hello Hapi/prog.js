@@ -1,15 +1,24 @@
-var hapi = require('hapi')
-var server = new hapi.server({
-    host: 'localhost',
-    port: Number(process.argv[2] || 8080)
-})
+const Hapi = require('hapi');
 
-server.route({path: '/', method:'GET', handler: func})
+(async () => {
+    try {
+        const server = Hapi.Server({ 
+            host: 'localhost',
+            port: Number(process.argv[2] || 8080) 
+        });
 
-function func(request, h){
-    return 'Hello hapi'
-}
+        server.route({
+            path: '/',
+            method: 'GET',
+            handler: (request, h) => { 
+                return 'Hello hapi'; 
+            }
+        });
 
-await server.start()
+        await server.start();
 
-console.log('Server running at:', server.info.uri)
+        console.log(`Server running at: ${server.info.uri}`);
+    } catch (error) {
+        console.log(error);
+    }
+})();
