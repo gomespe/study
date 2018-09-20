@@ -5,9 +5,9 @@ describe('stack#pop', function (){
     before(function() {
         expected = [1,2];
     })
-    // it('should return error when not using array', function() {
-    //     expect(() => stack.pop({})).to.throw('Data provided is not an array')
-    // })
+    it('should return error when not using array', function() {
+        expect(() => stack.pop({})).to.throw('Data provided is not an array')
+    })
     it('should return error when pop empty array', function() {
         expect(() => stack.pop([])).to.throw('Cannot pop empty array')
     })
