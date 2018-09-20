@@ -1,11 +1,9 @@
 
-
 module.exports = {
     pop: (array) => {
         if(!Array.isArray(array))
             throw new Error("Data provided is not an array")
         if(array.length === 0){
-            // throw new Error("Empty array cannot be popped")
             throw new Error("Cannot pop empty array")
         }
         array.pop()

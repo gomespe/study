@@ -1,6 +1,3 @@
-//TODO
-// ERROR HANDLING
-
 'use strict';
 
 const stack = require('./stack.js')
