@@ -3,3 +3,5 @@ report/
 coverage/
 .vscode/
 .idea/
+.coverdata/
+.coverrun
